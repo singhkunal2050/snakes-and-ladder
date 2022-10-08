@@ -1,0 +1,58 @@
+:root {
+  --board-width: 500px;
+}
+
+body {
+  font-family: Arial;
+}
+
+h1,
+h2 {
+  font-family: Lato;
+}
+
+.board {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: orange;
+  max-width: var(--board-width);
+  margin: 20px auto;
+}
+
+.row {
+  display: flex;
+}
+
+.row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.block {
+  width: calc(var(--board-width) / 10);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: #efefef;
+  outline: 1px solid rgb(119, 119, 119);
+}
+
+.block.active {
+  background: rgb(171, 157, 255) !important;
+  outline: 1px solid rgb(37, 37, 255);
+  color: blueviolet;
+}
+
+.block.ladder {
+  background: rgb(84, 238, 46) !important;
+}
+
+.block.snake {
+  background: rgb(255, 60, 60) !important;
+}
+
+.block:nth-child(odd) {
+  background: white;
+}
